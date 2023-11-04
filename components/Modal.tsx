@@ -26,15 +26,15 @@ const Modal: React.FC<ModalProps> = ({
     >
       <Dialog.Portal>
         <Dialog.Overlay
-          className="
+          className='
             fixed 
             inset-0 
             bg-neutral-900/90 
             backdrop-blur-sm
-          "
+          '
         />
         <Dialog.Content
-          className="
+          className='
             fixed 
             left-[50%] 
             top-[50%] 
@@ -54,32 +54,32 @@ const Modal: React.FC<ModalProps> = ({
             md:max-h-[85vh] 
             md:w-[90vw] 
             md:max-w-[450px]
-          "
+          '
         >
           <Dialog.Title
-            className="
+            className='
               mb-4 
               text-center 
               text-xl 
               font-bold
-            "
+            '
           >
             {title}
           </Dialog.Title>
           <Dialog.Description
-            className="
+            className='
               mb-5 
               text-center 
               text-sm 
               leading-normal
-            "
+            '
           >
             {description}
           </Dialog.Description>
           <div>{children}</div>
           <Dialog.Close asChild>
             <button
-              className="
+              className='
                 absolute 
                 right-[10px] 
                 top-[10px] 
@@ -93,8 +93,8 @@ const Modal: React.FC<ModalProps> = ({
                 text-neutral-400 
                 hover:text-white 
                 focus:outline-none
-              "
-              aria-label="Close"
+              '
+              aria-label='Close'
             >
               <IoMdClose />
             </button>

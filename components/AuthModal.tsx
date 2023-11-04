@@ -2,14 +2,14 @@
 
 'use client';
 
-import React, { useEffect } from 'react';
-import { Auth } from '@supabase/auth-ui-react';
-import { ThemeSupa } from '@supabase/auth-ui-shared';
 import {
   useSessionContext,
   useSupabaseClient,
 } from '@supabase/auth-helpers-react';
+import { Auth } from '@supabase/auth-ui-react';
+import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
 
 import useAuthModal from '@/hooks/useAuthModal';
 
@@ -37,8 +37,8 @@ const AuthModal = () => {
 
   return (
     <Modal
-      title="Welcome back"
-      description="Login to your account."
+      title='Welcome back'
+      description='Login to your account.'
       isOpen={isOpen}
       onChange={onChange}
     >
@@ -57,7 +57,7 @@ const AuthModal = () => {
             },
           },
         }}
-        theme="dark"
+        theme='dark'
       />
     </Modal>
   );

@@ -2,19 +2,19 @@
 
 'use client';
 
-import uniqid from 'uniqid';
-import React, { useState } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
+import uniqid from 'uniqid';
 
 import useUploadModal from '@/hooks/useUploadModal';
 import { useUser } from '@/hooks/useUser';
 
-import Modal from './Modal';
-import Input from './Input';
 import Button from './Button';
+import Input from './Input';
+import Modal from './Modal';
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -108,52 +108,52 @@ const UploadModal = () => {
 
   return (
     <Modal
-      title="Add a song"
-      description="Upload an mp3 file"
+      title='Add a song'
+      description='Upload an mp3 file'
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-y-4"
+        className='flex flex-col gap-y-4'
       >
         <Input
-          id="title"
+          id='title'
           disabled={isLoading}
           {...register('title', { required: true })}
-          placeholder="Song title"
+          placeholder='Song title'
         />
         <Input
-          id="author"
+          id='author'
           disabled={isLoading}
           {...register('author', { required: true })}
-          placeholder="Song author"
+          placeholder='Song author'
         />
         <div>
-          <div className="pb-1">Select a song file</div>
+          <div className='pb-1'>Select a song file</div>
           <Input
-            placeholder="test"
+            placeholder='test'
             disabled={isLoading}
-            type="file"
-            accept=".mp3"
-            id="song"
+            type='file'
+            accept='.mp3'
+            id='song'
             {...register('song', { required: true })}
           />
         </div>
         <div>
-          <div className="pb-1">Select an image</div>
+          <div className='pb-1'>Select an image</div>
           <Input
-            placeholder="test"
+            placeholder='test'
             disabled={isLoading}
-            type="file"
-            accept="image/*"
-            id="image"
+            type='file'
+            accept='image/*'
+            id='image'
             {...register('image', { required: true })}
           />
         </div>
         <Button
           disabled={isLoading}
-          type="submit"
+          type='submit'
         >
           Create
         </Button>

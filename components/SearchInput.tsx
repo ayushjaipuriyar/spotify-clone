@@ -1,7 +1,10 @@
-import useDebounce from '@/hooks/useDebounce';
+'use client';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
 import qs from 'query-string';
+import React, { useEffect, useState } from 'react';
+
+import useDebounce from '@/hooks/useDebounce';
+
 import Input from './Input';
 
 const SearchInput = () => {
@@ -16,7 +19,13 @@ const SearchInput = () => {
     router.push(url);
   }, [debouncedValue, router]);
 
-  return <Input placeholder='What do you want to listen to ?' value={value} onChange={(e)=>setValue(e.target.value)}/>
+  return (
+    <Input
+      placeholder='What do you want to listen to ?'
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+  );
 };
 
 export default SearchInput;

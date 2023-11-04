@@ -1,29 +1,32 @@
+'use client';
 import LikedButton from '@/components/LikedButton';
 import MediaItem from '@/components/MediaItem';
+import useOnPlay from '@/hooks/useOnPlay';
 import { Song } from '@/types';
 
-interface SearchComponentProps {
+interface SearchContentProps {
   songs: Song[];
 }
 
-const SearchComponent: React.FC<SearchComponentProps> = ({ songs }) => {
+const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
+  const onPlay = useOnPlay(songs);
   if (songs.length === 0) {
     return (
-      <div className="flex w-full flex-col gap-y-2 px-6 text-neutral-400">
+      <div className='flex w-full flex-col gap-y-2 px-6 text-neutral-400'>
         No Songs found.
       </div>
     );
   }
   return (
-    <div className="flex w-full flex-col gap-y-2 px-4">
+    <div className='flex w-full flex-col gap-y-2 px-4'>
       {songs.map((song) => (
         <div
           key={song.id}
-          className="flex w-full items-center gap-x-4"
+          className='flex w-full items-center gap-x-4'
         >
-          <div className="flex-1">
+          <div className='flex-1'>
             <MediaItem
-              onClick={() => {}}
+              onClick={(id: string) => onPlay(id)}
               data={song}
             />
           </div>
@@ -34,4 +37,4 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ songs }) => {
   );
 };
 
-export default SearchComponent;
+export default SearchContent;

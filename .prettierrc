@@ -4,7 +4,7 @@
   "singleQuote": true,
   "tabWidth": 2,
   "semi": true,
-  "jsxSingleQuote": false,
+  "jsxSingleQuote": true,
   "quoteProps": "as-needed",
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
